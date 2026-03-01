@@ -1,7 +1,7 @@
 # 📊 Retail Performance & Market Expansion For A Global Superstore | Power BI
 
 **Author:** Van Bat Phuc Tai  
-**Tools: **Power BI**
+**Tools Used:** Power BI
 
 ---
 
@@ -67,7 +67,7 @@ This analysis supports alignment between **market expansion strategy, product po
 
 ### 📊 Data Structure  
 
-## 1️⃣ Tables Used:
+### 1️⃣ Tables Used:
 
 The dataset consists of three relational tables:  
 
@@ -127,11 +127,11 @@ The dataset consists of three relational tables:
 
 </details>
 
-## 2️⃣ Data Relationships:
+### 2️⃣ Data Relationships:
 
 <img width="1380" height="800" alt="image" src="https://github.com/user-attachments/assets/c21503b1-f855-48f0-8833-2f67b4aa0257" />
 
-## 🔗 Data Model Relationships
+### 🔗 Data Model Relationships
 
 | From Table     | To Table        | Join Key        | Relationship Type |
 |---------------|----------------|----------------|-------------------|
