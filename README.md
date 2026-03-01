@@ -69,6 +69,8 @@ This analysis supports alignment between **market expansion strategy, product po
 
 The dataset consists of three relational tables:  
 
+🛒 Orders – Contains detailed transaction and customer information (51,290 records).
+
 <details>
 <summary><strong>Table 1: Orders</strong></summary>
 
@@ -94,5 +96,31 @@ The dataset consists of three relational tables:
 | Sales        | DECIMAL  | Revenue generated from the order. |
 | Quantity     | INT      | Number of items ordered. |
 | Profit       | DECIMAL  | Profit earned from the order. |
+
+</details>
+
+🔄 Returns – Stores data on returned orders.
+
+<details>
+<summary><strong>Table 2: Returns</strong></summary>
+
+| Column Name | Data Type | Description |
+|-------------|----------|------------|
+| Returned    | VARCHAR  | Indicates whether the order was returned (e.g., 'Yes' or 'No'). |
+| Order ID    | VARCHAR  | Unique identifier for each order. |
+
+</details>
+
+👥 People – Holds information about sales representatives.
+
+<details>
+<summary><strong>Table 3: People</strong></summary>
+
+> 👥 Holds information about sales representatives.
+
+| Column Name | Data Type | Description |
+|-------------|----------|------------|
+| Person      | VARCHAR  | Name of the salesperson. |
+| Region      | VARCHAR  | Geographic region where the salesperson operates. |
 
 </details>
