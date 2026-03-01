@@ -67,6 +67,8 @@ This analysis supports alignment between **market expansion strategy, product po
 
 ### 📊 Data Structure  
 
+## 1️⃣ Tables Used:
+
 The dataset consists of three relational tables:  
 
 🛒 Orders – Contains detailed transaction and customer information (51,290 records).
@@ -124,3 +126,45 @@ The dataset consists of three relational tables:
 | Region      | VARCHAR  | Geographic region where the salesperson operates. |
 
 </details>
+
+## 2️⃣ Data Relationships:
+
+<img width="1380" height="800" alt="image" src="https://github.com/user-attachments/assets/c21503b1-f855-48f0-8833-2f67b4aa0257" />
+
+## 🔗 Data Model Relationships
+
+| From Table     | To Table        | Join Key        | Relationship Type |
+|---------------|----------------|----------------|-------------------|
+| Fact_Orders   | Dim_Product    | Product ID     | Many-to-One (*:1) |
+| Fact_Orders   | Dim_Customer   | Customer ID    | Many-to-One (*:1) |
+| Fact_Orders   | Dim_Date       | Order Date     | Many-to-One (*:1) |
+| Fact_Orders   | Dim_Location   | Location ID    | Many-to-One (*:1) |
+| Fact_Orders   | Dim_Market     | Market ID      | Many-to-One (*:1) |
+| Fact_Orders   | Dim_Ship_Mode  | Ship Mode ID   | Many-to-One (*:1) |
+| Fact_Orders   | Dim_Segment    | Segment ID     | Many-to-One (*:1) |
+| Fact_Orders   | Dim_Returns    | Order ID       | Many-to-One (*:1) | 
+| Dim_Product   | Dim_Subcategory| Subcategory ID | Many-to-One (*:1) |
+| Dim_Subcategory | Dim_Category | Category ID    | Many-to-One (*:1) |
+| Dim_Market    | Dim_People     | Region         | Many-to-One (*:1) |
+
+## 🧠 Design Thinking Process
+
+### 1️⃣ Empathize
+
+
+### 2️⃣ Define Point of View
+
+
+### 3️⃣ Ideate
+
+
+### 4️⃣ Prototype and Review
+This phase is implemented and validated directly within the interactive dashboard.
+
+---
+
+## 📊 Key Insights & Visualizations
+
+### 🔍 Dashboard Preview
+
+### I. Overview
