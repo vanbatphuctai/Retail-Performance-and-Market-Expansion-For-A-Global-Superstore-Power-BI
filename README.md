@@ -16,44 +16,61 @@
 
 ## 📌 Background & Overview  
 
-### 🎯 Objective  
+### 🌍 Global Superstore Sales – Business Context
 
-Developed a **Power BI dashboard** using the Global Superstore dataset (Orders, People, Returns) to transform transactional data into **actionable business insights** for strategic decision-making.  
-
-The project focuses on:  
-
-- Evaluating overall **sales and profitability performance**  
-- Identifying **high-potential markets for expansion**  
-- Prioritizing **profitable and scalable product categories**  
-- Supporting **ROI-driven decision-making**  
+**Global Superstore** is a **multinational retail company** operating across multiple global markets.  
+The company sells **Furniture, Office Supplies, and Technology** products through **regionally assigned sales representatives**.
 
 ---
 
-### 👤 Target Users  
+### 🎯 Business Objective
 
-- Data Analysts & Business Analysts  
-- Sales & Marketing teams  
-- Route-to-Market & Strategy teams  
+Senior management requires a **clear view of overall business performance, market dynamics, and product category results** to define **market expansion strategy** and identify **strategic product priorities**.
 
----
-
-### ❓ Key Business Questions  
-
-- What is the current performance baseline?  
-- Which markets show the strongest growth and ROI potential?  
-- Which products should be prioritized for strategic investment?  
+The goal is to support **data-driven decision-making** that improves **revenue quality, profitability, and ROI** across markets and product categories.
 
 ---
 
-### 🎯 Project Outcome  
+### ❗ Why This Analysis Matters
 
-Revenue scaled steadily, but **margin expansion remained constrained**, indicating operational cost pressure.  
+To expand effectively, leadership must understand not only **revenue performance** but also **market-level** and **product-level contribution** to overall results.
 
-Several regions demonstrated **strong margin quality and growth momentum**, highlighting expansion opportunities.  
+Without **structured performance analysis**:
 
-Technology led revenue performance, though **return-heavy SKUs impacted profitability**. High-margin categories outperformed, while weaker segments diluted overall results.  
+- **Market expansion decisions** may lack performance validation  
+- **Strategic product selection** may not align with actual profitability  
+- Growth efforts may overlook **performance gaps** across regions or categories  
 
-This analysis supports alignment between **market expansion strategy, product portfolio optimization, and profitability improvement**.  
+This dashboard provides a **consolidated performance view** to support **data-driven expansion strategy** and **product prioritization decisions**.
+
+---
+
+### 👤 Target Users
+
+- **Senior Management**  
+- **Strategy & Expansion Teams**  
+- **Sales & Marketing Teams**  
+- **Data / Business Analysts**  
+
+---
+
+### ❓ Key Business Questions
+
+- What is the **current business performance**?
+- Which markets demonstrate **strong growth and sustainable profitability**?
+- Which product categories drive **high-margin revenue**?
+- Where are operational risks (**low margin, high return rate**) impacting results?
+
+---
+
+### 📊 Project Outcome
+
+- Revenue increased steadily, but **margin expansion remained constrained** due to cost pressure.  
+- Several markets showed **strong profitability and growth momentum** → expansion opportunities.  
+- **Technology** led revenue contribution; however, **return-heavy SKUs reduced margin quality**.  
+- **High-margin categories** outperformed, while weaker segments diluted overall profitability.  
+
+This project enables alignment between **market expansion strategy, product portfolio optimization, and profitability improvement**.
 
 ---
 
@@ -130,22 +147,6 @@ The dataset consists of three relational tables:
 ### 2️⃣ Data Relationships:
 
 <img width="1380" height="800" alt="image" src="https://github.com/user-attachments/assets/c21503b1-f855-48f0-8833-2f67b4aa0257" />
-
-### 🔗 Data Model Relationships
-
-| From Table     | To Table        | Join Key        | Relationship Type |
-|---------------|----------------|----------------|-------------------|
-| Fact_Orders   | Dim_Product    | Product ID     | Many-to-One (*:1) |
-| Fact_Orders   | Dim_Customer   | Customer ID    | Many-to-One (*:1) |
-| Fact_Orders   | Dim_Date       | Order Date     | Many-to-One (*:1) |
-| Fact_Orders   | Dim_Location   | Location ID    | Many-to-One (*:1) |
-| Fact_Orders   | Dim_Market     | Market ID      | Many-to-One (*:1) |
-| Fact_Orders   | Dim_Ship_Mode  | Ship Mode ID   | Many-to-One (*:1) |
-| Fact_Orders   | Dim_Segment    | Segment ID     | Many-to-One (*:1) |
-| Fact_Orders   | Dim_Returns    | Order ID       | Many-to-One (*:1) | 
-| Dim_Product   | Dim_Subcategory| Subcategory ID | Many-to-One (*:1) |
-| Dim_Subcategory | Dim_Category | Category ID    | Many-to-One (*:1) |
-| Dim_Market    | Dim_People     | Region         | Many-to-One (*:1) |
 
 ## 🧠 Design Thinking Process
 
@@ -285,7 +286,7 @@ This phase is implemented and validated directly within the interactive dashboar
 #### 1. Total Revenue, Total Profit & Profit Margin  
 
 Revenue reached **$12.64M (+51.5%)** and Profit hit **$1.47M (+52.3%)**, with Orders up **+51.7%**.  
-→ Growth was strongly **volume-driven**, while margin slightly improved to **11.61%**.
+→ Growth was strongly **volume-driven**, with revenue rising at the same pace as orders, suggesting **no meaningful change in AOV**, while margin slightly improved to **11.61%**.
 
 #### 2. Business Performance Overview by Year  
 
@@ -329,37 +330,28 @@ Return rates remained stable (~5–6%).
 
 ### 📌 Key Findings:
 
-#### 1. Revenue & Profit Distribution
+#### 1. Revenue & Profit Overview 
 
 Total Revenue reached **$12.64M** and Total Profit **$1.47M**.
-**APAC (\~$3.6M), EU (\~$2.9M), and US (\~$2.3M)** led revenue contribution.
-→ **Canada recorded the highest profit margin (~26.6%)** despite minimal revenue, while **EMEA showed the weakest margin (~5.5%)**.
+APAC, EU, and US are the core revenue contributors, anchoring overall performance.  
+Profitability, however, varies meaningfully across markets.
+→ Scale is concentrated in major markets, but **margin structure differs** by region.
 
-#### 2. Revenue vs. Revenue LY (%YoY)
+#### 2. Growth Dynamics (YoY)
 
-**APAC (\~$3.6M), EU (\~$2.9M), and US (\~$2.3M)** led total revenue.  
-**EMEA (\~+59.8%)** and **Africa (\~+56.5%)** recorded the highest **YoY growth**, while **US (\~46.9%)** showed the lowest growth.  
-→ **Emerging markets** are expanding faster, while **large markets** remain stable revenue pillars.
+EMEA (+59.8%) and Africa (+56.5%) recorded the fastest YoY growth, while US (+46.9%) expanded more moderately.
+→ Growth momentum is shifting toward **emerging markets**, while mature markets remain stable revenue pillars.
 
-#### 3. Revenue, Profit Margin & Total Orders by Market
+#### 3. Market Efficiency Contrast
 
-**APAC and EU combine high revenue with solid margins (~12–13%)**.  
-**Canada achieved the highest profit margin (~26.6%)** despite very low revenue.  
-EMEA had the weakest margin (~5.5%).  
-→ Clear contrast between scale markets (APAC/EU) and high-efficiency niche market (Canada).
+Core markets operate at healthy mid-level margins (~12–13%).  
+Canada delivers the highest margin (~26.6%) despite limited scale, whereas EMEA runs at the lowest margin (~5.5%).
+→ Clear divergence between **volume-driven** core markets and **margin-driven** niche markets.
 
-#### 4. Top 5 Salesperson Revenue Rankings
+#### 4. Sales Performance Concentration
 
-Top performer generated **~$2.82M**, significantly higher than others (~$0.88M–$1.60M).  
-Revenue contribution is partially concentrated among top reps.  
-→ Performance gap suggests opportunity for sales capability optimization.
-
-#### 5. Sales Metrics Overview by Dimension (Market View)
-
-APAC led in **Revenue (\~$3.6M), Profit (\~$436K), and Orders (5,437)**.  
-EU and US followed as core contributors.  
-Canada delivered **exceptional margin but lowest total orders (~201)**.  
-→ Business performance varies clearly between volume-driven and margin-driven markets.
+Top salesperson generated ~$2.82M, significantly outperforming peers (~$0.88M–$1.60M).
+→ Revenue concentration highlights a **capability gap** and **scalability opportunity** within the sales team.
 
 ### III. Product Analysis
 
@@ -400,7 +392,7 @@ Top products (e.g., **Apple Smart Phone, Cisco Smart Phone, Motorola Smart Phone
 
 ### IV. Sales Agent 
 
-<img width="1300" alt="image" src="https://github.com/user-attachments/assets/54549eaa-4abb-4fdb-8f17-786abc3dcd04" />
+<img width="1300" alt="image" src="https://github.com/user-attachments/assets/30dbd9e9-85e8-4e3e-b70b-06cfd40de3e7" />
 
 ### 📌 Key Findings
 
